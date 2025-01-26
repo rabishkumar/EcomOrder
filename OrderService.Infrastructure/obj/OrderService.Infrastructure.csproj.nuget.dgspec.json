@@ -1,0 +1,193 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Architecture\\EcomOrder\\OrderService.Infrastructure\\OrderService.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "C:\\Architecture\\EcomOrder\\OrderService.Application\\OrderService.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Architecture\\EcomOrder\\OrderService.Application\\OrderService.Application.csproj",
+        "projectName": "OrderService.Application",
+        "projectPath": "C:\\Architecture\\EcomOrder\\OrderService.Application\\OrderService.Application.csproj",
+        "packagesPath": "C:\\Users\\NOI03_Rabish\\.nuget\\packages\\",
+        "outputPath": "C:\\Architecture\\EcomOrder\\OrderService.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NOI03_Rabish\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj": {
+                "projectPath": "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj",
+        "projectName": "OrderService.Domain",
+        "projectPath": "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj",
+        "packagesPath": "C:\\Users\\NOI03_Rabish\\.nuget\\packages\\",
+        "outputPath": "C:\\Architecture\\EcomOrder\\OrderService.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NOI03_Rabish\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Architecture\\EcomOrder\\OrderService.Infrastructure\\OrderService.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Architecture\\EcomOrder\\OrderService.Infrastructure\\OrderService.Infrastructure.csproj",
+        "projectName": "OrderService.Infrastructure",
+        "projectPath": "C:\\Architecture\\EcomOrder\\OrderService.Infrastructure\\OrderService.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\NOI03_Rabish\\.nuget\\packages\\",
+        "outputPath": "C:\\Architecture\\EcomOrder\\OrderService.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NOI03_Rabish\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Architecture\\EcomOrder\\OrderService.Application\\OrderService.Application.csproj": {
+                "projectPath": "C:\\Architecture\\EcomOrder\\OrderService.Application\\OrderService.Application.csproj"
+              },
+              "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj": {
+                "projectPath": "C:\\Architecture\\EcomOrder\\OrderService.Domain\\OrderService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
