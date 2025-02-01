@@ -1,0 +1,12 @@
+C:\Architecture\EcomOrder\OrderService.Domain\bin\Debug\net8.0\OrderService.Domain.deps.json
+C:\Architecture\EcomOrder\OrderService.Domain\bin\Debug\net8.0\OrderService.Domain.dll
+C:\Architecture\EcomOrder\OrderService.Domain\bin\Debug\net8.0\OrderService.Domain.pdb
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.AssemblyInfoInputs.cache
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.AssemblyInfo.cs
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.csproj.CoreCompileInputs.cache
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.sourcelink.json
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.dll
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\refint\OrderService.Domain.dll
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\OrderService.Domain.pdb
+C:\Architecture\EcomOrder\OrderService.Domain\obj\Debug\net8.0\ref\OrderService.Domain.dll
