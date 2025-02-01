@@ -11,6 +11,8 @@ COPY OrderService.Domain/OrderService.Domain.csproj ./OrderService.Domain/
 COPY OrderService.Infrastructure/OrderService.Infrastructure.csproj ./OrderService.Infrastructure/
 
 # Restore all the dependencies (via nuget)
+RUN dotnet nuget locals all --clear
+
 RUN dotnet restore
 
 # Copy all the source code for all projects
