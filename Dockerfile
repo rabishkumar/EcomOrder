@@ -9,7 +9,7 @@ COPY OrderService.API/OrderService.API.csproj ./OrderService.API/
 COPY OrderService.Application/OrderService.Application.csproj ./OrderService.Application/
 COPY OrderService.Domain/OrderService.Domain.csproj ./OrderService.Domain/
 COPY OrderService.Infrastructure/OrderService.Infrastructure.csproj ./OrderService.Infrastructure/
-
+COPY ./helm /helm
 # Restore all the dependencies (via nuget)
 RUN dotnet nuget locals all --clear
 
