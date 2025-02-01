@@ -1,15 +1,5 @@
 # Use official .NET Core SDK image to build the projects
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-RUN apt-get update && apt-get install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release \
-    && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | tee /etc/apt/trusted.gpg.d/docker.asc \
-    && echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list \
-    && apt-get update \
-    && apt-get install -y docker-ce docker-ce-cli containerd.io
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 # Set the working directory
 WORKDIR /app
 
@@ -33,7 +23,7 @@ RUN dotnet build OrderService.sln -c Release --no-restore
 RUN dotnet publish OrderService.sln -c Release -o /app/publish --no-build
 
 # Use the official .NET Core Runtime image to run the app
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 80
 
