@@ -2,22 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "AWSSDK.CloudWatchEvents/3.7.400.84": {
-        "type": "package",
-        "dependencies": {
-          "AWSSDK.Core": "[3.7.401.4, 4.0.0)"
-        },
-        "compile": {
-          "lib/net8.0/AWSSDK.CloudWatchEvents.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/AWSSDK.CloudWatchEvents.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "AWSSDK.Core/3.7.401.4": {
         "type": "package",
         "compile": {
@@ -1082,38 +1066,6 @@
     }
   },
   "libraries": {
-    "AWSSDK.CloudWatchEvents/3.7.400.84": {
-      "sha512": "3odpuwTwRLWEkWn+J4M89L6yW7n38s1rJg/ibaDIqVpCySAw//fT2G5ErKH+aSrH2g4/PVFoB1R2lyXywWGOkg==",
-      "type": "package",
-      "path": "awssdk.cloudwatchevents/3.7.400.84",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "analyzers/dotnet/cs/AWSSDK.CloudWatchEvents.CodeAnalysis.dll",
-        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
-        "awssdk.cloudwatchevents.3.7.400.84.nupkg.sha512",
-        "awssdk.cloudwatchevents.nuspec",
-        "images/AWSLogo.png",
-        "lib/net35/AWSSDK.CloudWatchEvents.dll",
-        "lib/net35/AWSSDK.CloudWatchEvents.pdb",
-        "lib/net35/AWSSDK.CloudWatchEvents.xml",
-        "lib/net45/AWSSDK.CloudWatchEvents.dll",
-        "lib/net45/AWSSDK.CloudWatchEvents.pdb",
-        "lib/net45/AWSSDK.CloudWatchEvents.xml",
-        "lib/net8.0/AWSSDK.CloudWatchEvents.dll",
-        "lib/net8.0/AWSSDK.CloudWatchEvents.pdb",
-        "lib/net8.0/AWSSDK.CloudWatchEvents.xml",
-        "lib/netcoreapp3.1/AWSSDK.CloudWatchEvents.dll",
-        "lib/netcoreapp3.1/AWSSDK.CloudWatchEvents.pdb",
-        "lib/netcoreapp3.1/AWSSDK.CloudWatchEvents.xml",
-        "lib/netstandard2.0/AWSSDK.CloudWatchEvents.dll",
-        "lib/netstandard2.0/AWSSDK.CloudWatchEvents.pdb",
-        "lib/netstandard2.0/AWSSDK.CloudWatchEvents.xml",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
-      ]
-    },
     "AWSSDK.Core/3.7.401.4": {
       "sha512": "zM61ybD1Y1zVyXLMG18EOtqznZ9EaHbHMX9vgC9YAWrTx1EaxnrpFcXGWYWPKhm0QCkodSktZnrbEmaAq/I//w==",
       "type": "package",
@@ -2975,7 +2927,6 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "AWSSDK.CloudWatchEvents >= 3.7.400.84",
       "AWSSDK.Core >= 3.7.401.4",
       "AWSSDK.EventBridge >= 3.7.402.26",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.1",
@@ -3032,10 +2983,6 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "AWSSDK.CloudWatchEvents": {
-            "target": "Package",
-            "version": "[3.7.400.84, )"
-          },
           "AWSSDK.Core": {
             "target": "Package",
             "version": "[3.7.401.4, )"

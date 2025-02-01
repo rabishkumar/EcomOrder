@@ -170,10 +170,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "AWSSDK.CloudWatchEvents": {
-              "target": "Package",
-              "version": "[3.7.400.84, )"
-            },
             "AWSSDK.Core": {
               "target": "Package",
               "version": "[3.7.401.4, )"
