@@ -1,44 +1,45 @@
 ---
-  version: 0.2
-  env:
-    variables:
-      IMAGE_REPO_NAME: ecom_order_ecr
-      IMAGE_TAG: latest
-      KUBE_CONFIG: /root/.kube/config
-      HELM_CHART_PATH: ./helm/ecomorder
-      AWS_REGION: ap-south-1
-      AWS_ACCOUNT_ID: 390403890915
-  phases:
-    install:
-      commands:
-        - echo "Installing dependencies..."
-        - if ! command -v helm &> /dev/null; then curl
-          https://get.helm.sh/helm-v3.9.1-linux-amd64.tar.gz -o helm.tar.gz && tar
-          -zxvf helm.tar.gz && mv linux-amd64/helm /usr/local/bin/helm; fi
-        - helm version
-    pre_build:
-      commands:
-        - echo "Logging into AWS ECR..."
-        - aws ecr get-login-password --region $AWS_REGION | docker login
-          --username AWS --password-stdin
-          $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-        - echo "Updating kubeconfig..."
-        - aws eks --region $AWS_REGION update-kubeconfig --name
-          ecom-portal-fargate-cluster
-    build:
-      commands:
-        - echo "Building and pushing Docker image..."
-        - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
-        - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG
-          $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-        - docker push
-          $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-    post_build:
-      commands: echo "Deploying with Helm..." helm upgrade --install ecomorder
-        $HELM_CHART_PATH --namespace default \ --set
-        image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
-        \ --set image.tag=$IMAGE_TAG \
-          --debug --dry-run
-
-  
-  
+version: 0.2
+env:
+  variables:
+    IMAGE_REPO_NAME: ecom_order_ecr
+    IMAGE_TAG: latest
+    KUBE_CONFIG: /root/.kube/config
+    HELM_CHART_PATH: ./helm/ecomorder
+    AWS_REGION: ap-south-1
+    AWS_ACCOUNT_ID: 390403890915
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - if ! command -v helm &> /dev/null; then curl
+        https://get.helm.sh/helm-v3.9.1-linux-amd64.tar.gz -o helm.tar.gz && tar
+        -zxvf helm.tar.gz && mv linux-amd64/helm /usr/local/bin/helm; fi
+      - helm version
+  pre_build:
+    commands:
+      - echo "Logging into AWS ECR..."
+      - aws ecr get-login-password --region $AWS_REGION | docker login
+        --username AWS --password-stdin
+        $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - echo "Updating kubeconfig..."
+      - aws eks --region $AWS_REGION update-kubeconfig --name
+        ecom-portal-fargate-cluster
+  build:
+    commands:
+      - echo "Building and pushing Docker image..."
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG
+        $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker push
+        $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+  post_build:
+    commands: echo "Deploying with Helm..." helm upgrade --install ecomorder
+      $HELM_CHART_PATH --namespace default \ --set
+      image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
+      \ --set image.tag=$IMAGE_TAG \ --debug --dry-run - echo "Building the Helm
+      chart" - helm template ecomorder ./helm1/ecomorder --namespace default
+      --set
+      image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
+      --set image.tag=$IMAGE_TAG --debug - if [ $? -ne 0 ]; then echo "Helm
+      template failed"; exit 1; fi - echo "Helm template ran successfully"
