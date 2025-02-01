@@ -38,7 +38,5 @@
         $HELM_CHART_PATH --namespace default \ --set
         image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
         \ --set image.tag=$IMAGE_TAG
-  artifacts:
-    files:
-      - imagedefinitions.json
+  
   
