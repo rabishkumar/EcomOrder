@@ -36,7 +36,7 @@ phases:
   post_build:
     commands:
       - echo "Building the Helm chart"
-      - helm template ecomorder ./helm/ecomorder --namespace default \
+      - helm template ecomorder ./helm/ecomorder \
          --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME \
          --set image.tag=$IMAGE_TAG --debug
 
