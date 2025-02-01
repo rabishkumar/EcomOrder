@@ -5,7 +5,7 @@ env:
     IMAGE_TAG: latest
     KUBE_CONFIG: /root/.kube/config
     HELM_CHART_PATH: helm/ecomorder
-    AWS_REGION: ap-south1
+    AWS_REGION: ap-south-1
     AWS_ACCOUNT_ID: 390403890915
 
 phases:
