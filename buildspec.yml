@@ -36,9 +36,11 @@ phases:
   post_build:
     commands:
       - echo "Building the Helm chart"
-      - helm template ecomorder ./helm/ecomorder \
-         --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME \
-         --set image.tag=$IMAGE_TAG --debug
+      - helm template ecomorder ./helm/ecomorder --namespace default \
+        --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME \
+        --set image.tag=$IMAGE_TAG \
+        --debug
+
 
       # Check if helm template failed
       - if [ $? -ne 0 ]; then echo "Helm template failed"; exit 1; fi
