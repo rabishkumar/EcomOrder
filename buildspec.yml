@@ -9,7 +9,7 @@ phases:
   install:
     commands:
       - echo "Installing dependencies..."
-      - yum install -y docker
+      - RUN apt-get update && apt-get install -y docker.io
       - if ! command -v helm &> /dev/null; then curl
         https://get.helm.sh/helm-v3.9.1-linux-amd64.tar.gz -o helm.tar.gz && tar
         -zxvf helm.tar.gz && mv linux-amd64/helm /usr/local/bin/helm; fi
