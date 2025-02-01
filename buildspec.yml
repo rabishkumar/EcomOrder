@@ -37,6 +37,8 @@
       commands: echo "Deploying with Helm..." helm upgrade --install ecomorder
         $HELM_CHART_PATH --namespace default \ --set
         image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
-        \ --set image.tag=$IMAGE_TAG
+        \ --set image.tag=$IMAGE_TAG \
+          --debug --dry-run
+
   
   
