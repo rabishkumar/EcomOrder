@@ -1,15 +1,42 @@
-public class Program
+using Microsoft.AspNetCore.HttpOverrides;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Force Kestrel to listen on all interfaces (important for Kubernetes)
+builder.WebHost.ConfigureKestrel(options =>
 {
-    public static void Main(string[] args)
-    {
-        CreateHostBuilder(args).Build().Run();
-    }
+    options.ListenAnyIP(80); // Bind to port 80
+});
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
-    }
+// Add services to the DI container
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
+var app = builder.Build();
+
+// Enable Forwarded Headers Middleware (Needed for Ingress Controllers)
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.All
+});
+
+// Enable Swagger for API testing (Optional)
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+// Enable Routing & Controllers
+app.UseRouting();
+app.UseAuthorization();
+app.MapControllers();
+
+// Handle graceful shutdown (important for Kubernetes)
+app.Lifetime.ApplicationStopping.Register(() =>
+{
+    Console.WriteLine("Application is shutting down gracefully...");
+});
+
+app.Run();
