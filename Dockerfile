@@ -31,6 +31,6 @@ EXPOSE 80
 
 # Copy the published files from the build stage
 COPY --from=build /app/publish .
- 
+
 # Set the entry point to the primary project's entry point
 ENTRYPOINT ["dotnet", "OrderService.API.dll"]
