@@ -24,7 +24,7 @@ phases:
         $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
       - echo "Updating kubeconfig..."
       - aws eks --region $AWS_REGION update-kubeconfig --name
-        eks-fargate-cluster
+        ecom-fargate-cluster
   build:
     commands:
       - echo "Building and pushing Docker image..."
