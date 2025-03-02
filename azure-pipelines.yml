@@ -8,7 +8,7 @@ variables:
   imageTag: '$(Build.BuildId)'  # Unique tag for each build
   resourceGroup: 'ecom_resource_group'  # Your Azure Resource Group
   containerAppName: 'ecomordercontainer'  # Your Azure Container App Name
-  location: 'East Asia'  # Azure region
+  
 
 stages:
 - stage: Build
