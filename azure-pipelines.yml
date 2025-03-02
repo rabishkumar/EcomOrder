@@ -56,5 +56,4 @@ stages:
             --name $(containerAppName) \
             --resource-group $(resourceGroup) \
             --image $(containerRegistry)/$(containerRepository):$(imageTag) \
-            --location $(location) \
             --query properties.configuration.ingress.fqdn
